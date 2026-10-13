@@ -4,37 +4,37 @@
 
 # macgram
 
-**Un éditeur de MCD (Merise / UML) dont les fichiers se versionnent avec git.**
-Une alternative à Looping, pour Linux et Windows.
+**An entity-relationship diagram editor (Merise / UML) whose files version cleanly with git.**
+An alternative to Looping, for Linux and Windows.
 
-[![Dernière version](https://img.shields.io/github/v/release/redyd/macgram-releases?label=version&color=1565C0)](https://github.com/redyd/macgram-releases/releases/latest)
-[![Téléchargements](https://img.shields.io/github/downloads/redyd/macgram-releases/total?label=t%C3%A9l%C3%A9chargements&color=1565C0)](https://github.com/redyd/macgram-releases/releases)
+[![Latest version](https://img.shields.io/github/v/release/redyd/macgram-releases?label=version&color=1565C0)](https://github.com/redyd/macgram-releases/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/redyd/macgram-releases/total?label=downloads&color=1565C0)](https://github.com/redyd/macgram-releases/releases)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="screenshot-dark.png">
-  <img src="screenshot-light.png" alt="Un schéma Client – Commande – Ligne – Produit dans macgram, avec son MLD généré en dessous" width="860">
+  <img src="screenshot-light.png" alt="A Customer – Order – Line – Product diagram in macgram, its relational model generated underneath, and the assistant adding an entity in the side panel" width="860">
 </picture>
 
 </div>
 
-## Télécharger
+## Download
 
-Les liens pointent toujours vers la dernière version.
+These links always point to the latest version.
 
-| Système | Fichier | |
+| System | File | |
 |---|---|---|
-| **Windows** | Installeur | [macgram-windows-x64-setup.exe](https://github.com/redyd/macgram-releases/releases/latest/download/macgram-windows-x64-setup.exe) |
-| | Zip portable, sans installation | [macgram-windows-x64.zip](https://github.com/redyd/macgram-releases/releases/latest/download/macgram-windows-x64.zip) |
-| **Linux** | AppImage, toutes distributions | [macgram-x86_64.AppImage](https://github.com/redyd/macgram-releases/releases/latest/download/macgram-x86_64.AppImage) |
+| **Windows** | Installer | [macgram-windows-x64-setup.exe](https://github.com/redyd/macgram-releases/releases/latest/download/macgram-windows-x64-setup.exe) |
+| | Portable zip, no installation | [macgram-windows-x64.zip](https://github.com/redyd/macgram-releases/releases/latest/download/macgram-windows-x64.zip) |
+| **Linux** | AppImage, any distribution | [macgram-x86_64.AppImage](https://github.com/redyd/macgram-releases/releases/latest/download/macgram-x86_64.AppImage) |
 | | Debian, Ubuntu, Mint | [macgram-amd64.deb](https://github.com/redyd/macgram-releases/releases/latest/download/macgram-amd64.deb) |
 | | Fedora | [macgram-x86_64.rpm](https://github.com/redyd/macgram-releases/releases/latest/download/macgram-x86_64.rpm) |
 | | Archive | [macgram-linux-x64.tar.gz](https://github.com/redyd/macgram-releases/releases/latest/download/macgram-linux-x64.tar.gz) |
 
-Les versions précédentes sont sur la page [Releases](https://github.com/redyd/macgram-releases/releases). Il n'y a pas de version macOS pour l'instant.
+Earlier versions are on the [Releases](https://github.com/redyd/macgram-releases/releases) page. There is no macOS build yet.
 
-## Installer
+## Install
 
-**Windows.** Lance l'installeur. Il n'est pas signé, donc Windows peut afficher « Windows a protégé votre ordinateur » : clique sur *Informations complémentaires*, puis *Exécuter quand même*.
+**Windows.** Run the installer. It is not signed, so Windows may show "Windows protected your PC": click *More info*, then *Run anyway*.
 
 **AppImage.**
 
@@ -55,35 +55,36 @@ sudo apt install ./macgram-amd64.deb
 sudo dnf install ./macgram-x86_64.rpm
 ```
 
-**Archive.** Décompresse-la où tu veux et lance `./macgram` ; le binaire a besoin des dossiers `lib/` et `data/` à côté de lui.
+**Archive.** Extract it anywhere and run `./macgram`; the binary needs the `lib/` and `data/` folders next to it.
 
-Les paquets `.deb` et `.rpm` ajoutent `macgram` au menu d'applications et au `PATH`. Un fichier peut être passé en argument : `macgram modele.mcd.json`.
+The `.deb` and `.rpm` packages add `macgram` to the application menu and to the `PATH`. A file can be given as an argument: `macgram model.mcd.json`.
 
-## Mises à jour
+## Updates
 
-L'application cherche une nouvelle version au lancement et propose de l'installer. Rien n'est téléchargé sans ton accord.
+The app looks for a new version when it starts and offers to install it. Nothing is downloaded without your say.
 
-| Installation | Ce que fait « Mettre à jour » |
+| Installation | What "Update" does |
 |---|---|
-| Installeur Windows | télécharge l'installeur suivant et le lance |
-| AppImage | remplace le fichier AppImage |
-| `.deb`, `.rpm` | télécharge le paquet et l'installe (le système demande ton mot de passe) |
-| Zip portable, `.tar.gz` | ouvre cette page |
+| Windows installer | downloads the next installer and runs it |
+| AppImage | replaces the AppImage file |
+| `.deb`, `.rpm` | downloads the package and installs it (the system asks for your password) |
+| Portable zip, `.tar.gz` | opens this page |
 
-## Ce que fait macgram
+## What macgram does
 
-- **Le MCD** : entités, associations binaires ou n-aires, cardinalités, identifiants relatifs, enums, notes et flèches d'annotation, en notation Merise ou UML.
-- **Le MLD en direct** : le modèle relationnel se génère sous le schéma à mesure que tu le dessines.
-- **Des fichiers faits pour git** : du JSON avec un élément par ligne et des identifiants aléatoires, donc des diffs lisibles et des branches qui fusionnent sans collision.
-- **Le réarrangement automatique** : un bouton replace les boîtes pour limiter les croisements de liens.
-- **L'import Looping** : les fichiers `.loo` s'ouvrent directement.
-- **L'export** en PNG et en SVG, fidèle au thème clair ou sombre.
-- **Le reste** : annuler / rétablir, copier-coller, recherche par nom, mode strict, interface en français ou en anglais.
+- **The conceptual model**: entities, binary or n-ary associations, cardinalities, weak entities, enums, notes and annotation arrows, in Merise or UML notation.
+- **The relational model, live**: tables, primary and foreign keys are generated under the diagram as you draw.
+- **Files made for git**: JSON with one element per line and random ids, so diffs stay readable and branches merge without collisions.
+- **Automatic layout**: one button moves the boxes around to keep links from crossing.
+- **An AI assistant**: talk to Claude Code or Codex in the side panel and watch it draw, one undoable step at a time. It runs the CLI already installed and signed in on your machine; macgram holds no key. A local MCP server lets an AI started from your terminal join in too.
+- **Looping import**: `.loo` files open directly.
+- **Export** to PNG and SVG, in the light or dark theme.
+- **And the rest**: undo / redo, copy and paste, search by name, strict mode, interface in English or French.
 
-## Un souci ?
+## Something wrong?
 
-Ouvre une [issue](https://github.com/redyd/macgram-releases/issues) en précisant ton système et la version (elle est affichée dans la barre d'outils).
+Open an [issue](https://github.com/redyd/macgram-releases/issues) with your system and the version (it is shown in the toolbar).
 
-## Licence
+## License
 
-macgram est distribué sous licence MIT avec la *Commons Clause* : tu peux l'utiliser librement, y compris en entreprise, mais pas le revendre. Ce dépôt ne contient que les fichiers à télécharger.
+macgram is distributed under the MIT license with the *Commons Clause*: free to use, at work too, but not to resell. This repository only holds the files to download.
