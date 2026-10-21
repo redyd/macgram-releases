@@ -12,7 +12,7 @@ An alternative to Looping, for Linux and Windows.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="screenshot-dark.png">
-  <img src="screenshot-light.png" alt="A Customer – Order – Line – Product diagram in macgram, its relational model generated underneath, and the assistant adding an entity in the side panel" width="860">
+  <img src="screenshot-light.png" alt="A Customer – Order – Line – Product diagram in macgram, its PostgreSQL script generated underneath, and the assistant adding an entity in the side panel" width="860">
 </picture>
 
 </div>
@@ -72,14 +72,16 @@ The app looks for a new version when it starts and offers to install it. Nothing
 
 ## What macgram does
 
-- **The conceptual model**: entities, binary or n-ary associations, cardinalities, weak entities, enums, notes and annotation arrows, in Merise or UML notation.
-- **The relational model, live**: tables, primary and foreign keys are generated under the diagram as you draw.
+- **The conceptual model**: entities, binary, n-ary, reflexive or standalone associations, cardinalities, weak entities, enums, notes and annotation arrows.
+- **Three views of one diagram**: Merise, UML and relational, sharing the same box positions.
+- **The relational model and SQL, live**: the MLD under the diagram, or the `CREATE TABLE` script for PostgreSQL, MySQL / MariaDB, SQLite or SQL Server, or a Prisma schema. Advanced settings (table and column names, defaults, `CHECK`, indexes, `ON DELETE`) go straight into the script.
 - **Files made for git**: JSON with one element per line and random ids, so diffs stay readable and branches merge without collisions.
 - **Automatic layout**: one button moves the boxes around to keep links from crossing.
+- **Colour marks**: mark entities and associations with a colour, and find them again in a side tab.
+- **Cloud documents** (with a macgram account): put a diagram in the cloud, share it with friends and edit it together live, with everyone's pointer on the diagram.
 - **An AI assistant**: talk to Claude Code or Codex in the side panel and watch it draw, one undoable step at a time. It runs the CLI already installed and signed in on your machine; macgram holds no key. A local MCP server lets an AI started from your terminal join in too.
-- **Looping import**: `.loo` files open directly.
-- **Export** to PNG and SVG, in the light or dark theme.
-- **And the rest**: undo / redo, copy and paste, search by name, strict mode, interface in English or French.
+- **Import and export**: `.loo` files from Looping open directly; export to PNG, SVG, SQL or Prisma.
+- **And the rest**: undo / redo, copy and paste, search by name, strict mode, light and dark themes, interface in English or French, release notes after each update.
 
 ## Something wrong?
 
